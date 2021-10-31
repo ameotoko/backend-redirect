@@ -1,0 +1,10 @@
+{
+    "name": "ameotoko/backend-redirect",
+    "type": "contao-bundle",
+    "authors": [
+        {
+            "name": "Andrey Vinichenko"
+        }
+    ],
+    "require": {}
+}
