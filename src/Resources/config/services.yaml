@@ -1,0 +1,3 @@
+services:
+    Ameotoko\BackendRedirect\Controller\RedirectController:
+        tags: [controller.service_arguments]

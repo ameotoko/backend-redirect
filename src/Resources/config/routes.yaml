@@ -1,0 +1,3 @@
+ameotoko_backend_redirect:
+    path: /contao/redirect
+    controller: Ameotoko\BackendRedirect\Controller\RedirectController
