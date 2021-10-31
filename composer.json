@@ -6,5 +6,15 @@
             "name": "Andrey Vinichenko"
         }
     ],
-    "require": {}
+    "require": {
+        "contao/core-bundle": "^4.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ameotoko\\BackendRedirect\\": "src/"
+        }
+    },
+    "extra": {
+        "contao-manager-plugin": "Ameotoko\\BackendRedirect\\ContaoManager\\Plugin"
+    }
 }
