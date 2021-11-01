@@ -1,0 +1,5 @@
+_ameotoko_backend_redirect:
+    resource: './_definition.yaml'
+    prefix: /contao/redirect
+    trailing_slash_on_root: false
+

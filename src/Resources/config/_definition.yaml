@@ -1,3 +1,5 @@
 ameotoko_backend_redirect:
-    path: /contao/redirect
+    path: /
     controller: Ameotoko\BackendRedirect\Controller\RedirectController
+    defaults:
+        _scope: backend
