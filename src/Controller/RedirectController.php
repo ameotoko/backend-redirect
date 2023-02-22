@@ -23,9 +23,13 @@ class RedirectController
         $url = $router->generate('contao_backend');
 
         if ($srcQuery = $request->getQueryString()) {
-            $url = StringUtil::ampersand(str_replace($request->getPathInfo(), $url, '/' . Backend::addToUrl($srcQuery)), false);
+            if (in_array($request->query->get('act'), [null, 'edit', 'show', 'select'], true)) {
+                $srcQuery = Backend::addToUrl($srcQuery);
+            }
+
+            $url = StringUtil::ampersand(str_replace($request->getPathInfo(), $url, '/' . $srcQuery), false);
         }
 
-        return new RedirectResponse($url);
+        return new RedirectResponse($url, Response::HTTP_TEMPORARY_REDIRECT);
     }
 }

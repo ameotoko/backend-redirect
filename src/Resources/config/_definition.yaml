@@ -1,5 +1,6 @@
 ameotoko_backend_redirect:
     path: /
+    methods: ['GET']
     controller: Ameotoko\BackendRedirect\Controller\RedirectController
     defaults:
         _scope: backend

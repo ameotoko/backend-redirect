@@ -1,6 +1,6 @@
 # Backend Redirect
 
-Backend Redirect Bundle is an extension for [Contao CMS](https://contao.org).
+Backend Redirect Bundle is an extension for [Contao CMS](https://contao.org) version 4.
 
 ## Installation
 
@@ -18,7 +18,7 @@ This bundle adds a backend route to your application (`/contao/redirect` by defa
 
 Sometimes you might want to let your backend users to access a record editing form, using a direct link, like `/contao?do=members&act=edit&id=42`. For instance, your application might be sending notifications to your editors, where they can click on such a link in the email and proceed directly to editing the record.
 
-Currently, Contao's backend firewall will not let you do it directly – it will force your editors to go through a confirmation screen like this:
+Prior to version 5.1, Contao's backend firewall will not let you do it directly – it will force your editors to go through a confirmation screen like this:
 
 ![](screenshot.png?raw=true)
 
@@ -33,6 +33,11 @@ It will redirect to:
 ```
 https://example.com/contao?do=user&act=edit&id=1&rt=a48be7155094538da5fe2.dO1lxYXxmvHGRIblveDcaZfHJMYJpQbWLaMMtb1oO8g.E4QDt-6hwr-pd9Sn8IGROeW2e544_36kcptUx-4QXvodviGcwqvbrv8o9Q
 ```
+
+_NOTES:_
+
+1. This will only work for idempotent actions that do not directly change or delete database records, such as e.g. `?act=edit`. In other cases, request token will not be added, and Contao's token check will still kick in.
+2. Starting from version `5.1`, Contao does not require request token for idempotent actions anymore, so you do not need this bundle (see [contao/contao#5461](https://github.com/contao/contao/pull/5461)).
 
 ## Configuration
 
